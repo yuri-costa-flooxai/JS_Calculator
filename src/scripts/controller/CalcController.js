@@ -3,7 +3,18 @@ class CalcController {
     constructor() {
         this._displayCalc = "0";
         this._currentDate;
+        this.initialize()
 
+    }
+
+    initialize() {
+        let _displayCalcEl = document.querySelector("#display");
+        let dateEl = document.querySelector("#data");
+        let timeEl = document.querySelector("#hora");
+
+        _displayCalcEl.innerHTML = this._displayCalc;
+        dateEl.innerHTML = this._currentDate.toLocaleDateString();
+        timeEl.innerHTML = this._currentDate.toLocaleTimeString();
     }
 
     get _displayCalc() {
